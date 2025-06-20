@@ -2,6 +2,29 @@ import Image from "next/image";
 
 const navigationItems = ["Service", "Agency", "Resource", "Contact"];
 
+const navigationServices = [
+  {
+    title: "Analytics",
+    icon: "/icons/icon-arrow-right-bottom.png",
+  },
+  {
+    title: "Content Marketing",
+    icon: "/icons/icon-arrow-right-bottom.png",
+  },
+  {
+    title: "Social Media",
+    icon: "/icons/icon-arrow-right-bottom.png",
+  },
+  {
+    title: "Digital Marketing",
+    icon: "/icons/icon-arrow-right-bottom.png",
+  },
+  {
+    title: "Web Design",
+    icon: "/icons/icon-arrow-right-bottom.png",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -196,6 +219,53 @@ export default function Home() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Our device */}
+      <section className="w-full px-2.5">
+        <div className="w-full bg-black rounded-2xl px-[60px] py-[101px] relative">
+          <p className="text-white">Our Services</p>
+          {navigationServices.map((service, index) => {
+            return (
+              <div key={index}>
+                <div className="flex lg:flex-row items-center justify-between mt-6 md:flex-col sm:flex-col xs:flex-col sm:text-center">
+                  <p className="text-white text-3xl font-medium">
+                    {String(index + 1).padStart(2, "0")}.
+                  </p>
+                  <p className="text-white font-medium text-[80px]">
+                    {service.title}
+                  </p>
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={40}
+                    height={40}
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Divider di bawah */}
+                <div className="mt-8 mb-20">
+                  <hr className="border-t border-gray-600 opacity-50" />
+                </div>
+              </div>
+            );
+          })}
+          <Image
+            src="/images/service2.png"
+            alt="Arrow Icon"
+            width={225}
+            height={225}
+            className="object-cover absolute top-200 left-30"
+          />
+          <Image
+            src="/images/service1.png"
+            alt="Arrow Icon"
+            width={225}
+            height={225}
+            className="object-cover absolute top-150 right-45"
+          />
         </div>
       </section>
     </>
