@@ -143,6 +143,61 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* OUT TEAM SECTION */}
+      <section className="w-full bg-[#FAFAFA] px-4 sm:px-10 lg:px-[70px] py-20 overflow-x-hidden flex flex-col items-center">
+        <p className="capitalize text-[18px] sm:text-[20px] font-medium">
+          our team
+        </p>
+
+        <p className="capitalize text-4xl sm:text-5xl lg:text-6xl font-semibold text-center">
+          Engage with Our Creative Team
+        </p>
+
+        <p className="text-base sm:text-lg lg:text-xl text-[#667085] font-medium text-center mt-4 max-w-[800px]">
+          We work to create the most attractive & meaningful place for <br />
+          small businesses. Our Team always ready to help you.
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 place-items-center mt-10 w-full max-w-[880px]">
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => {
+            const extraClass = index === 5 ? "lg:col-start-2" : "";
+
+            return (
+              <div
+                key={num}
+                className={`flex flex-col items-center ${extraClass}`}
+              >
+                {/* Jika bukan index ke-3 (ingat index dimulai dari 0), tampilkan gambar */}
+                {index !== 3 ? (
+                  <Image
+                    src={`/images/pro${num}.png`}
+                    alt={`Team Member ${num}`}
+                    width={132}
+                    height={132}
+                    className="object-cover rounded-full w-[88px] h-[88px] sm:w-[100px] sm:h-[100px] lg:w-[132px] lg:h-[132px]"
+                  />
+                ) : (
+                  <div className="flex items-center justify-between bg-black text-white rounded-full w-[150px] sm:w-[160px] lg:w-[183px] h-[50px] sm:h-[56px] lg:h-[64px] pl-4 sm:pl-5 lg:pl-6 pr-2">
+                    <span className="text-sm sm:text-base font-medium">
+                      View All
+                    </span>
+                    <div className="relative w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] lg:w-[48px] lg:h-[48px] bg-white rounded-full flex items-center justify-center">
+                      <Image
+                        src="/icons/icon-arrow-right.png"
+                        alt="Arrow Icon"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </section>
     </>
   );
 }
