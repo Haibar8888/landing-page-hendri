@@ -1,4 +1,9 @@
+'use client'
+
 import Image from "next/image";
+import Button from "@/components/button";
+import Card from "@/components/card";
+
 
 const navigationItems = ["Service", "Agency", "Resource", "Contact"];
 
@@ -201,20 +206,7 @@ export default function Home() {
                     className="object-cover rounded-full w-[88px] h-[88px] sm:w-[100px] sm:h-[100px] lg:w-[132px] lg:h-[132px]"
                   />
                 ) : (
-                  <div className="flex items-center justify-between bg-black text-white rounded-full w-[150px] sm:w-[160px] lg:w-[183px] h-[50px] sm:h-[56px] lg:h-[64px] pl-4 sm:pl-5 lg:pl-6 pr-2">
-                    <span className="text-sm sm:text-base font-medium">
-                      View All
-                    </span>
-                    <div className="relative w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] lg:w-[48px] lg:h-[48px] bg-white rounded-full flex items-center justify-center">
-                      <Image
-                        src="/icons/icon-arrow-right.png"
-                        alt="Arrow Icon"
-                        width={20}
-                        height={20}
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
+                  <Button text="View All" onClick={() => console.log('clicked')} className=""/>
                 )}
               </div>
             );
@@ -266,7 +258,31 @@ export default function Home() {
             height={225}
             className="object-cover absolute top-150 right-45"
           />
-        </div>
+          </div>
+      </section>
+
+      <section className="w-full bg-[#FAFAFA] px-4 sm:px-10 lg:px-[70px] py-20">
+          <div className="flex flex-row justify-between">
+            <div className="">
+              <p className="font-medium text-2xl mb-6">our article</p>
+              <p className="text-[64px] font-semibold capitalize leading-tight">Our Article shares <br /> marketing insights.</p>
+            </div>
+            <div className="flex flex-col justify-between">
+              <p className="font-medium text-[16px] ">We are the top digital marketing agency for <br />  branding corp. We offer a full range of services to <br /> help clients improve their search engine rankings.</p>
+              <Button text="View all insight" onClick={() => console.log('view all insight')} className=""/>
+            </div>
+          </div>
+          <div className="flex flex-row justify-evenly mt-[80px]">
+              <div className="">
+                <Card className="" srcCard="/images/card-image1.jpg" srcProfile="/images/card-avatar.png" alt="" category="Business" userProfile="Galuh Haibar"/>
+              </div>
+              <div className="">
+                <Card className="" srcCard="/images/card-image2.jpg" srcProfile="/images/card-avatar.png" alt="" category="Business" userProfile="Galuh Haibar"/>
+              </div>
+              <div className="">
+                <Card className="" srcCard="/images/card-image3.jpg" srcProfile="/images/card-avatar.png" alt="" category="Business" userProfile="Galuh Haibar"/>
+              </div>
+          </div>
       </section>
     </>
   );
